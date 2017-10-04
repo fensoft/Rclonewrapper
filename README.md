@@ -4,7 +4,7 @@ Simple wrapper to use [rclone](https://rclone.org) in your PHP projects.
 ## Install
 
 ``` sh
-php composer.phar require "pskuza/rclonewrapper"
+php composer.phar require "fensoft/rclonewrapper"
 ```
 
 You need a valid rclone.conf
@@ -44,6 +44,11 @@ var_dump($rclone->mkdir('/test'));
 var_dump($rclone->rmdir('/test'));
 // bool (true) on success, false on failure
 // https://rclone.org/commands/rclone_rmdir/
+
+# delete file
+var_dump($rclone->delete('/test/file'));
+// bool (true) on success, false on failure
+// https://rclone.org/commands/rclone_delete/
 
 # copy a file to a remote directory
 var_dump($rclone->copy('afile.dat', '/test'));

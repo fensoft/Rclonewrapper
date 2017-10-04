@@ -308,6 +308,24 @@ class Rclonewrapper
 
         return false;
     }
+	
+	/**
+     * Deletes a file.
+     *
+     * @param string $path
+     *
+     * @return bool
+     */
+    public function delete($path)
+    {
+        $deletedir = $this->execute('delete '.$this->remote.$path);
+
+        if (isset($deletedir) && !$deletedir[1]) {
+            return true;
+        }
+
+        return false;
+    }
 
     /**
      * Prints the total size and number of objects.
